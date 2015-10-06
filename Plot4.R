@@ -13,10 +13,6 @@ if (file.exists("household_power_consumption.txt")){
     data_origin <- read.table(unz("exdata-Fdata-Fhousehold_power_consumption.zip","household_power_consumption.txt"), sep =";", header = TRUE, stringsAsFactors = FALSE)
 }
 
-#data <- read.table("household_power_consumption.txt", sep=";", header = TRUE, stringsAsFactors = FALSE)
-#data$Date <- strptime(data$Date, format = "%d/%m/%Y")
-#data.new <- subset(data, data$Date >= strptime("2007-02-01", format = "%Y-%m-%d") & data$Date <= strptime("2007-02-02", format = "%Y-%m-%d"))
-
 # Transform the datas in order to be able to perform graphics plots
 library(dplyr)
 data_origin <- tbl_df(data_origin)
